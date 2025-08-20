@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Card Stack</title>
+  <link rel="stylesheet" href="Node.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Left Controls -->
+    <div class="controls">
+      <button class="btn round" id="addBtn">+</button>
+      <button class="btn round" id="upBtn">↑</button>
+      <button class="btn round" id="downBtn">↓</button>
+    </div>
+
+    <!-- Card Stack -->
+    <div class="card-container">
+    
+    </div>
+
+    <!-- Right Color Palette -->
+    <div class="palette">
+      <span class="color black"></span>
+      <span class="color purple"></span>
+      <span class="color brown"></span>
+      <span class="color teal"></span>
+    </div>
+  </div>
+
+  <!-- Hidden Form -->
+  <form class="hidden-form">
+    <input id="nameInput" type="text" placeholder="Enter Name" required>
+    <input id="hometownInput" type="text" placeholder="Enter Hometown" required>
+    <input id="bookingsInput" type="text" placeholder="Enter Bookings (e.g., 3 times)" required>
+    <input id="imagePathInput" type="text" placeholder="Enter Image Path" required>
+    <div class="button">
+    <button type="submit">Add Profile</button>
+    <button id="close">Close</button>
+    </div>  
+</form>
+
+  <script src="./Node.js"></script>
+</body>
+</html>

@@ -1,0 +1,216 @@
+/* Page base styling */
+body {
+  background: #222;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  color: #fff;
+}
+
+/* Flex wrapper: controls - cards - palette */
+.container {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* minimal space between elements */
+}
+
+/* Controls (left) */
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.btn {
+  background-color: #333;
+  border: none;
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.btn.round {
+  border-radius: 50%;
+}
+
+/* Card stack container */
+.card-container {
+  position: relative;
+  width: 320px;
+  height: 400px;
+}
+
+/* Individual cards */
+.profile-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #2e2e2e;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Stack positioning (first 3 visible) */
+.profile-card:nth-child(1) {
+  transform: translateY(0px) scale(1);
+  z-index: 3;
+}
+.profile-card:nth-child(2) {
+  transform: translateY(20px) scale(0.95);
+  z-index: 2;
+}
+.profile-card:nth-child(3) {
+  transform: translateY(40px) scale(0.9);
+  z-index: 1;
+}
+/* Hide others */
+.profile-card:nth-child(n+4) {
+  display: none;
+}
+
+/* Avatar */
+.avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #fff;
+}
+
+/* Name */
+.profile-card h3 {
+  margin: 10px 0 0;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Details row (aligned properly) */
+.details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+.details p, .details span {
+  margin: 0;
+}
+
+/* Action buttons (Call/Message) */
+.actions {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.actions button {
+  padding: 8px 18px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s;
+}
+
+.call {
+  background-color: #000;
+  color: #fff;
+}
+
+.message {
+  background-color: #444;
+  color: #fff;
+}
+
+.call:hover {
+  background-color: #111;
+}
+
+.message:hover {
+  background-color: #555;
+}
+
+/* Palette (right) */
+.palette {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-left: 40px;
+}
+
+.color {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.color.black { background: #000; }
+.color.purple { background: #4b0082; }
+.color.brown { background: #5c3a21; }
+.color.teal { background: #008080; }
+
+/* Hidden form */
+.hidden-form {
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  background: #2c2c2c;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  width: 280px;
+  margin-top: 20px;
+  margin-left: 30px;
+
+}
+
+.hidden-form input {
+  padding: 8px;
+  border-radius: 5px;
+  border: none;
+  font-size: 14px;
+  margin-bottom: 20px;
+  margin-left: 40px;
+}
+
+.hidden-form button {
+  padding: 8px;
+  background: #2196f3;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.button{
+    display: flex;
+    justify-content: space-around;
+}
+
+.hidden-form button:hover {
+  background: #1976d2;
+}
+
+/* Responsive: stack vertically on small screens */
+@media (max-width: 600px) {
+  .container {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
